@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Dost</title>
+<style>
+body{margin:0;font-family:Arial;background:#101827;color:white;display:flex;justify-content:center;min-height:100vh}main{width:100%;max-width:600px;padding:20px;box-sizing:border-box;display:flex;flex-direction:column}h2{color:#72a7ff}#chat{flex:1;min-height:60vh;overflow:auto}.msg{padding:12px;margin:10px 0;border-radius:12px;background:#263449;white-space:pre-wrap}.me{background:#2458a6;margin-left:35px}.form{display:flex;gap:8px;position:sticky;bottom:0;background:#101827;padding:10px 0}input{flex:1;min-width:0;padding:14px;border-radius:10px;border:1px solid #53657c;background:#1d2939;color:white;font-size:16px}button{padding:12px;border:0;border-radius:10px;background:#4385f5;color:white;font-weight:bold}</style>
+</head>
+<body><main><h2>🤖 AI Dost</h2><p>Tumhara apna chat assistant</p><div id="chat"><div class="msg">Salam! Main AI Dost hoon. Mujhse baat karo. (Abhi demo mode mein hoon.)</div></div><div class="form"><input id="input" placeholder="Yahan message likho..." /><button id="send">Bhejo</button></div></main>
+<script>
+const chat=document.getElementById("chat"), input=document.getElementById("input");
+function send(){let s=input.value.trim();if(!s)return;let m=document.createElement("div");m.className="msg me";m.textContent=s;chat.appendChild(m);input.value="";let r=document.createElement("div");r.className="msg";r.textContent="Aapka message mil gaya! Asal AI jawab dene ke liye model connection abhi set up karna baqi hai.";chat.appendChild(r);chat.scrollTop=chat.scrollHeight;}
+document.getElementById("send").addEventListener("click",send);input.addEventListener("keydown",e=>{if(e.key==="Enter")send()});
+</script></body></html>
